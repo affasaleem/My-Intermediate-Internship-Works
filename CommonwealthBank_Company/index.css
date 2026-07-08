@@ -1,0 +1,208 @@
+/* Commonwealth Bank (CBA) Digital Style Customization */
+
+:root {
+    /* Style Guideline Brand Colours */
+    --primary-yellow: #FFCC00;
+    --beacon-yellow: #FFFF00;
+    --gray: #BEBEB9;
+    --light-gray: #EBEBEB;
+    --black: #1E1E1E;
+    --white: #FFFFFF;
+}
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* All text should be in a single sans-serif font */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* Global Text Colors Rule: 
+   All text should be black unless it occurs on a black background. 
+   If it occurs on a black background, it should be white. 
+*/
+h1, h2, h3, p, span, strong, a {
+    color: var(--black);
+}
+
+.black-bg {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+}
+
+.black-bg h1, 
+.black-bg h2, 
+.black-bg h3, 
+.black-bg p, 
+.black-bg span, 
+.black-bg strong, 
+.black-bg a {
+    color: var(--white) !important;
+}
+
+/* Typography Specifications */
+h1 {
+    font-size: 70pt; /* Title text size */
+    font-weight: bold;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 38pt; /* Subheading text size */
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+p, .intro, footer p {
+    font-size: 18pt; /* Body text size */
+    line-height: 1.6;
+}
+
+/* Page Layout Components */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navbar Component */
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid var(--primary-yellow);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+/* CommBank Brand Logo Diamond Icon */
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-yellow);
+    position: relative;
+    transform: rotate(45deg);
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
+}
+
+/* CommBank logo bottom-right cutout */
+.brand-logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background-color: var(--black);
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Hero Section */
+.hero-banner {
+    background-color: var(--primary-yellow);
+    padding: 90px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--gray);
+}
+
+.hero-banner h1 {
+    margin-bottom: 24px;
+}
+
+.hero-banner .intro {
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Main Content Cards */
+.main-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.tip-card {
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    border-left: 8px solid var(--primary-yellow);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tip-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--black);
+}
+
+.tip-card h2 {
+    margin-bottom: 16px;
+}
+
+.tip-card p {
+    text-align: justify;
+}
+
+/* Footer Component */
+footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 4px solid var(--primary-yellow);
+}
+
+footer p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive Scaling for Mobile Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 34pt;
+    }
+    h2 {
+        font-size: 22pt;
+    }
+    p, .intro, footer p {
+        font-size: 14pt;
+    }
+    .navbar {
+        height: 70px;
+    }
+    .hero-banner {
+        padding: 50px 0;
+    }
+    .tip-card {
+        padding: 24px;
+        margin-bottom: 20px;
+    }
+    .main-content {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
